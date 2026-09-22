@@ -100,3 +100,9 @@ WHERE id_cliente = 1;
 -- Excluir um agendamento
 DELETE FROM agendamentos
 WHERE id_agendamento = 7; 
+
+--Consultando Informações
+SELECT *
+FROM pets
+WHERE especie = 'Gato'
+
