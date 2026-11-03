@@ -38,8 +38,7 @@ SELECT clientes.nome, vendas.id_venda, vendas.data_venda
 FROM clientes
 JOIN vendas
 ON clientes.id_cliente = vendas.id_cliente;
-
-
+_
 -- Pets e seus donos
 SELECT pets.nome AS pet, clientes.nome AS dono
 FROM pets
