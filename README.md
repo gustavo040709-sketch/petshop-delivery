@@ -1,41 +1,68 @@
 # Pet Shop
 
-Projeto desenvolvido para integração entre Banco de Dados e Python.
+Loja e sistema de gerenciamento de pet shop em Python, Flask e PostgreSQL.
+O banco Neon configurado em `DATABASE_URL` é usado localmente e pelo Vercel,
+mantendo os dois ambientes conectados aos mesmos dados.
 
-## Sobre o projeto
+## Banco de dados Neon
 
-O projeto simula um sistema de Pet Shop,
-permitindo cadastrar clientes, pets, produtos,
-serviços, vendas e agendamentos.
+No painel do Neon, copie a connection string PostgreSQL. Para o Vercel, prefira
+a URL com pooler. Não coloque a senha no código nem a envie para o Git.
 
-## Banco de Dados
+### Executar localmente
 
-O banco foi desenvolvido utilizando PostgreSQL,
-com 7 tabelas:
+No PowerShell, crie o arquivo local de configuração e edite-o para preencher
+`DATABASE_URL` com a connection string copiada do Neon:
 
-- Clientes
-- Pets
-- Produtos
-- Vendas
-- Itens de Venda
-- Serviços
-- Agendamentos
+```powershell
+Copy-Item .env.example .env
+```
 
-## Python
+Instale as dependências e inicie o Flask:
 
-O projeto em Python utiliza:
+```powershell
+py -m pip install -r requirements.txt
+py app.py
+```
 
-- Funções
-- Listas
-- Dicionários
-- Módulos
-- SQLite
+Abra `http://127.0.0.1:5000`. O `.env` é ignorado pelo Git; mantenha nele a URL
+do banco e as credenciais do Mercado Pago usadas localmente.
+
+Na inicialização, o app cria as tabelas necessárias. Se o banco já tiver sido
+criado pelo script PostgreSQL antigo deste projeto, a inicialização renomeia as
+colunas conhecidas para os nomes esperados pela aplicação e preserva os dados.
+
+### Publicar no Vercel
+
+1. Importe este repositório no Vercel.
+2. Em **Settings > Environment Variables**, adicione `DATABASE_URL` com a mesma
+   connection string do Neon para os ambientes usados (Production, Preview e/ou
+   Development).
+3. Adicione também as variáveis do Mercado Pago se for habilitar pagamentos.
+4. Faça um novo deploy depois de salvar as variáveis.
+
+O arquivo `api/index.py` encaminha as requisições ao Flask e `vercel.json`
+configura o roteamento. O Vercel não usa o arquivo `.env` local; sem
+`DATABASE_URL` configurada no projeto, a aplicação informa o erro em vez de
+usar um banco local temporário.
 
 ## Estrutura
 
-A pasta banco contém os scripts SQL.
-A pasta python contém os códigos Python.
-A pasta sqlite contém o banco SQLite.
+A pasta `banco` contém os scripts SQL e a pasta `python` contém os módulos
+Python do sistema.
+
+## Interface web
+
+O front-end está na raiz do projeto. O botão de finalizar pedido abre uma página
+de checkout separada. O formulário de cartão é fornecido pelo Card Payment
+Brick do Mercado Pago; os dados sensíveis do cartão não são enviados nem
+armazenados pelo site. Configure primeiro as credenciais de teste do Mercado
+Pago e só use credenciais de produção em um ambiente HTTPS.
+
+Para atualizar o status dos pagamentos online, configure no painel do Mercado
+Pago o webhook `https://seu-dominio/api/mercado-pago/webhook` para eventos de
+pagamento e use a assinatura secreta em `MP_WEBHOOK_SECRET`. O pagamento em
+dinheiro na entrega não depende do gateway.
 
 ## Integrantes
 

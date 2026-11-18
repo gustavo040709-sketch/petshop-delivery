@@ -1,0 +1,97 @@
+x<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf2">
+  <title>Finalizar pedido | Pata & Companhia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/styles.css">
+  <link rel="stylesheet" href="../checkout.css">
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <script src="../static/checkout.js" defer></script>
+</head>
+<body class="checkout-page">
+  <header class="checkout-header">
+    <a class="brand" href="/static" aria-label="Voltar para Pata & Companhia">
+      <span class="brand-mark" aria-hidden="true">🐾</span>
+      <span>Pata <b>&</b> Companhia<small>pet shop com carinho</small></span>
+    </a>
+    <a class="checkout-back" href="/static">← Voltar à loja</a>
+  </header>
+
+  <main class="checkout-main">
+    <div class="checkout-title">
+      <div class="eyebrow">Só mais um passo</div>
+      <h1>Finalizar pedido <span>🐾</span></h1>
+      <p>Preencha seus dados e escolha como quer pagar.</p>
+    </div>
+
+    <div class="checkout-layout">
+      <form class="checkout-form" id="delivery-form">
+        <section class="checkout-section">
+          <div class="checkout-section-heading"><span>1</span><div><h2>Seus dados</h2><p>Para confirmarmos seu pedido.</p></div></div>
+          <div class="checkout-fields">
+            <label class="checkout-field checkout-field-wide">Nome completo<input name="nome" autocomplete="name" required maxlength="100" placeholder="Seu nome"></label>
+            <label class="checkout-field">E-mail<input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="voce@email.com"></label>
+            <label class="checkout-field">Celular / WhatsApp<input name="telefone" type="tel" autocomplete="tel" required maxlength="20" placeholder="(11) 99999-9999"></label>
+          </div>
+        </section>
+
+        <section class="checkout-section">
+          <div class="checkout-section-heading"><span>2</span><div><h2>Endereço de entrega</h2><p>Onde seu pedido vai chegar?</p></div></div>
+          <div class="checkout-fields">
+            <label class="checkout-field">CEP<input name="cep" autocomplete="postal-code" required maxlength="9" inputmode="numeric" placeholder="00000-000"></label>
+            <label class="checkout-field checkout-field-wide">Rua / Avenida<input name="rua" autocomplete="address-line1" required maxlength="120" placeholder="Nome da rua"></label>
+            <label class="checkout-field">Número<input name="numero" required maxlength="12" placeholder="Nº"></label>
+            <label class="checkout-field">Complemento <span class="field-optional">(opcional)</span><input name="complemento" autocomplete="address-line2" maxlength="80" placeholder="Apto, bloco..."></label>
+            <label class="checkout-field">Bairro<input name="bairro" required maxlength="80" placeholder="Seu bairro"></label>
+            <label class="checkout-field">Cidade<input name="cidade" autocomplete="address-level2" required maxlength="80" placeholder="Sua cidade"></label>
+            <label class="checkout-field">Estado<input name="estado" autocomplete="address-level1" required minlength="2" maxlength="2" placeholder="UF"></label>
+          </div>
+        </section>
+
+        <section class="checkout-section payment-section">
+          <div class="checkout-section-heading"><span>3</span><div><h2>Forma de pagamento</h2><p>Escolha uma opção para continuar.</p></div></div>
+          <div class="payment-choices">
+            <label class="payment-choice"><input type="radio" name="pagamento" value="pix" required><span class="payment-choice-icon">▦</span><span><strong>PIX</strong><small>Pagamento rápido</small></span></label>
+            <label class="payment-choice"><input type="radio" name="pagamento" value="cartao"><span class="payment-choice-icon">▰</span><span><strong>Cartão de crédito</strong><small>Escolha esta opção para pagar com cartão</small></span></label>
+            <label class="payment-choice"><input type="radio" name="pagamento" value="dinheiro"><span class="payment-choice-icon">＄</span><span><strong>Dinheiro na entrega</strong><small>Pague quando receber</small></span></label>
+          </div>
+          <div id="card-payment-area" class="card-payment-area" hidden>
+            <p class="secure-payment-note">🔒 Seus dados do cartão são protegidos e processados pelo Mercado Pago. Eles não passam nem ficam armazenados neste site.</p>
+            <p id="card-gateway-notice" class="gateway-notice" hidden></p>
+            <div id="cardPaymentBrick_container"></div>
+          </div>
+          <div id="pix-payment-area" class="pix-payment-area" hidden>
+            <p>Ao continuar, vamos gerar um QR Code PIX seguro do Mercado Pago.</p>
+            <p id="pix-gateway-notice" class="gateway-notice" hidden></p>
+            <label class="checkout-field">CPF do pagador<input name="cpf_pix" inputmode="numeric" autocomplete="off" maxlength="14" placeholder="000.000.000-00"></label>
+            <button type="button" class="button button-primary" id="pix-submit">Gerar código PIX <span aria-hidden="true">→</span></button>
+            <img
+              src="/imagens/qrcode-pix.png"
+              alt="QR Code PIX da loja"
+              class="pix-qr-code">
+          </div>
+          <div id="cash-payment-area" class="cash-payment-area" hidden>
+            <p>Você paga em dinheiro quando seu pedido chegar.</p>
+            <button type="button" class="button button-primary" id="cash-submit">Confirmar pedido <span aria-hidden="true">→</span></button>
+          </div>
+          <div id="payment-result" class="payment-result" hidden aria-live="polite"></div>
+          <p id="checkout-feedback" class="checkout-feedback" role="status" aria-live="polite"></p>
+        </section>
+      </form>
+
+      <aside class="order-summary">
+        <h2>Resumo do pedido</h2>
+        <div id="checkout-items" class="checkout-items"><p class="summary-loading">Carregando sua sacola...</p></div>
+        <div class="summary-total"><span>Total</span><strong id="checkout-total">R$ 0,00</strong></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="checkout-footer">© 2026 Pata & Companhia · Seus dados são usados somente para processar o pedido.</footer>
+</body>
+</html>

@@ -4,6 +4,6 @@ from faker import Faker
 fake = Faker('pt_BR')
 
 # Gera dados de teste
-print("Nome:", fake.name())
+print("Nome:", fake.name())0
 print("Endereço:", fake.address())
 print("E-mail:", fake.email())

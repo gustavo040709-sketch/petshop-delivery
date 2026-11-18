@@ -1,59 +1,70 @@
-CREATE TABLE clientes (
-    id_cliente SERIAL, PRIMARY KEY,
-    nome VARCHAR(100),
+CREATE TABLE IF NOT EXISTS clientes (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
     telefone VARCHAR(20),
-    email VARCHAR(70),
+    email VARCHAR(120)
 );
 
-CREATE TABLE pets (
-    id_pet SERIAL, PRIMARY KEY,
-    nome VARCHAR(100),
+CREATE TABLE IF NOT EXISTS pets (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
     especie VARCHAR(50),
     raca VARCHAR(100),
     idade INTEGER,
-    id_cliente INTEGER,
-    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
-)
+    cliente_id INTEGER
+);
 
-CREATE TABLE produtos (
-    id_produto SERIAL, PRIMARY KEY,
-    nome VARCHAR(100),
+CREATE TABLE IF NOT EXISTS funcionarios (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cargo VARCHAR(100),
+    telefone VARCHAR(20)
+);
+
+CREATE TABLE IF NOT EXISTS servicos (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco NUMERIC(10, 2)
+);
+
+CREATE TABLE IF NOT EXISTS agendamentos (
+    id SERIAL PRIMARY KEY,
+    data TEXT,
+    horario TEXT,
+    pet_id INTEGER,
+    servico_id INTEGER,
+    funcionario_id INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS produtos (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
     categoria VARCHAR(50),
-    estoque INTEGER
-    preco DECIMAL(10, 2)
-)
-
-CREATE TABLE vendas (
-    id_venda SERIAL, PRIMARY KEY,
-    id_cliente INTEGER,
-    data_venda DATE,
-    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+    preco NUMERIC(10, 2),
+    estoque INTEGER,
+    imagem TEXT
 );
 
-CREATE TABLE itens_venda (
-    id_item SERIAL, PRIMARY KEY,
-    id_venda INTEGER,
-    id_produto INTEGER,
+CREATE TABLE IF NOT EXISTS vendas (
+    id SERIAL PRIMARY KEY,
+    data TEXT,
     quantidade INTEGER,
-    preco_unitario DECIMAL(10, 2),
-    FOREIGN KEY (id_venda) REFERENCES vendas(id_venda),
-    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
+    valor_total NUMERIC(10, 2),
+    cliente_id INTEGER,
+    produto_id INTEGER,
+    pedido_codigo TEXT,
+    forma_pagamento TEXT,
+    status_pagamento TEXT,
+    mercado_pago_id TEXT
 );
 
-CREATE TABLE servicos (
-    id_servico SERIAL, PRIMARY KEY,
-    nome VARCHAR(100),
-    descricao VARCHAR(200),
-    preco DECIMAL(10, 2)
-);
-
-CREATE TABLE agendamentos (
-    id_agendamento SERIAL, PRIMARY KEY,
-    id_cliente INTEGER,
-    id_pet INTEGER,
-    id_servico INTEGER,
-    data_agendamento DATE,
-    horario TIME,
-    FOREIGN KEY (id_pet) REFERENCES pets(id_pet),
-    FOREIGN KEY (id_servico) REFERENCES servicos(id_servico)
+CREATE TABLE IF NOT EXISTS enderecos_pedidos (
+    pedido_codigo TEXT PRIMARY KEY,
+    cep TEXT NOT NULL,
+    rua TEXT NOT NULL,
+    numero TEXT NOT NULL,
+    complemento TEXT,
+    bairro TEXT NOT NULL,
+    cidade TEXT NOT NULL,
+    estado TEXT NOT NULL
 );
