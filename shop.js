@@ -11,21 +11,21 @@ const productImages = {
   brinquedos: "/imagens/brinquedos.svg"
 };
 const productImagesByName = {
-  "racao para caes 10kg": "/imagens/produtos/racao-caes.svg",
-  "racao para gatos 10kg": "/imagens/produtos/racao-gatos.svg",
-  "petisco sabor carne": "/imagens/produtos/petisco-carne.svg",
-  "petisco sabor frango": "/imagens/produtos/petisco-frango.svg",
-  "shampoo para caes": "/imagens/produtos/shampoo-caes.svg",
-  "shampoo para gatos": "/imagens/produtos/shampoo-gatos.svg",
-  "coleira azul": "/imagens/produtos/coleira-azul.svg",
-  "coleira vermelha": "/imagens/produtos/coleira-vermelha.svg",
-  "brinquedo bola": "/imagens/produtos/brinquedo-bola.svg",
-  "brinquedo corda": "/imagens/produtos/brinquedo-corda.svg",
-  "cama pequena": "/imagens/produtos/cama-pequena.svg",
-  "cama grande": "/imagens/produtos/cama-grande.svg",
-  "areia para gatos": "/imagens/produtos/areia-gatos.svg",
-  "escova para pelos": "/imagens/produtos/escova-pelos.svg",
-  comedouro: "/imagens/produtos/comedouro.svg"
+  "racao para caes 10kg": "/imagens/racao-caes.svg",
+  "racao para gatos 10kg": "/imagens/racao-gatos.svg",
+  "petisco sabor carne": "/imagens/petisco-carne.svg",
+  "petisco sabor frango": "/imagens/petisco-frango.svg",
+  "shampoo para caes": "/imagens/shampoo-caes.svg",
+  "shampoo para gatos": "/imagens/shampoo-gatos.svg",
+  "coleira azul": "/imagens/coleira-azul.svg",
+  "coleira vermelha": "/imagens/coleira-vermelha.svg",
+  "brinquedo bola": "/imagens/brinquedo-bola.svg",
+  "brinquedo corda": "/imagens/brinquedo-corda.svg",
+  "cama pequena": "/imagens/cama-pequena.svg",
+  "cama grande": "/imagens/cama-grande.svg",
+  "areia para gatos": "/imagens/areia-gatos.svg",
+  "escova para pelos": "/imagens/escova-pelos.svg",
+  comedouro: "/imagens/comedouro.svg"
 };
 let products = [];
 let cart = readCart();
