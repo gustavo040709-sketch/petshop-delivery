@@ -4,11 +4,11 @@ const productGrid = document.querySelector("#product-grid");
 const cartPanel = document.querySelector("#cart-panel");
 const toast = document.querySelector("#shop-toast");
 const productImages = {
-  racao: "/imagens/racao.svg",
-  petisco: "/imagens/petisco.svg",
-  higiene: "/imagens/higiene.svg",
-  acessorios: "/imagens/acessorios.svg",
-  brinquedos: "/imagens/brinquedos.svg"
+  racao: "/imagens/racao-caes.svg",
+  petisco: "/imagens/petisco-carne.svg",
+  higiene: "/imagens/shampoo-caes.svg",
+  acessorios: "/imagens/coleira-azul.svg",
+  brinquedos: "/imagens/brinquedo-bola.svg"
 };
 const productImagesByName = {
   "racao para caes 10kg": "/imagens/racao-caes.svg",
