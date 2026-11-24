@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#edf1e9"/>
+  <circle cx="105" cy="105" r="48" fill="#d8e4d7"/>
+  <circle cx="597" cy="395" r="82" fill="#dce8df"/>
+  <path d="M282 107h136v51h35v286H247V158h35z" fill="#6d9d89"/>
+  <path d="M305 107V76h89v31" fill="none" stroke="#315c4d" stroke-width="17" stroke-linejoin="round"/>
+  <rect x="274" y="215" width="152" height="156" rx="18" fill="#fffaf0"/>
+  <circle cx="350" cy="260" r="27" fill="#e6bd77"/>
+  <path d="M337 255c0-5 4-9 8-9s7 4 7 9c0-5 4-9 8-9s8 4 8 9c0 6-6 10-16 18-10-8-15-12-15-18z" fill="#315c4d"/>
+  <text x="350" y="316" text-anchor="middle" fill="#315c4d" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="2">HIGIENE</text>
+  <text x="350" y="341" text-anchor="middle" fill="#748a7b" font-family="Arial,sans-serif" font-size="12" letter-spacing="2">CUIDADO SUAVE</text>
+  <circle cx="175" cy="210" r="14" fill="#fffaf0" stroke="#9bb9a6" stroke-width="5"/>
+  <circle cx="516" cy="167" r="21" fill="#fffaf0" stroke="#9bb9a6" stroke-width="6"/>
+  <circle cx="527" cy="263" r="10" fill="#fffaf0" stroke="#9bb9a6" stroke-width="4"/>
+  <path d="M120 374c29-35 54-45 77-37-8 37-33 60-74 68M117 397c-7-43 0-73 21-93 26 30 29 64 12 101" fill="none" stroke="#d19a58" stroke-width="9" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#f3eadc"/>
+  <circle cx="95" cy="90" r="52" fill="#e5d4b8"/>
+  <circle cx="610" cy="405" r="82" fill="#e7d8c0"/>
+  <path d="M183 150 220 92h260l37 58 22 267H161z" fill="#315c4d"/>
+  <path d="m220 92 28 44h225l7-44z" fill="#487564"/>
+  <path d="M188 163h321" stroke="#264a3e" stroke-width="8" opacity=".55"/>
+  <rect x="214" y="195" width="252" height="177" rx="18" fill="#fff9ee"/>
+  <circle cx="340" cy="253" r="39" fill="#e7bd72"/>
+  <path d="M323 245c0-7 5-12 11-12s10 5 10 12c0-7 5-12 11-12s11 5 11 12c0 8-8 14-22 25-14-11-21-17-21-25z" fill="#315c4d"/>
+  <text x="340" y="321" text-anchor="middle" fill="#315c4d" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="3">RACAO</text>
+  <text x="340" y="348" text-anchor="middle" fill="#8d7b5d" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">NUTRICAO DIARIA</text>
+  <ellipse cx="535" cy="365" rx="58" ry="19" fill="#bd7745"/>
+  <path d="M480 365h110l-15 48h-80z" fill="#d88f57"/>
+  <circle cx="505" cy="356" r="8" fill="#72513d"/>
+  <circle cx="526" cy="351" r="8" fill="#72513d"/>
+  <circle cx="548" cy="357" r="8" fill="#72513d"/>
+  <path d="M105 355c28-33 52-43 73-40-7 35-30 58-67 68M95 374c-7-39-1-67 19-86 24 28 27 59 11 93" fill="none" stroke="#d19a58" stroke-width="9" stroke-linecap="round"/>
+</svg>

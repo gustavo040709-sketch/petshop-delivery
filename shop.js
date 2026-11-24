@@ -4,11 +4,11 @@ const productGrid = document.querySelector("#product-grid");
 const cartPanel = document.querySelector("#cart-panel");
 const toast = document.querySelector("#shop-toast");
 const productImages = {
-  racao: "photo-1552053831-71594a27632d",
-  "petisco": "photo-1601758228041-f3b2795255f1",
-  "higiene": "photo-1583337130417-3346a1be7dee",
-  acessorios: "photo-1548199973-03cce0bbc87b",
-  "brinquedos": "photo-1535294435445-d7249524ef2e"
+  racao: "/imagens/racao.svg",
+  petisco: "/imagens/petisco.svg",
+  higiene: "/imagens/higiene.svg",
+  acessorios: "/imagens/acessorios.svg",
+  brinquedos: "/imagens/brinquedos.svg"
 };
 let products = [];
 let cart = readCart();
@@ -55,8 +55,7 @@ function normalizeText(value) {
 }
 
 function productImageUrl(category) {
-  const photoId = productImages[normalizeText(category)] || productImages.acessorios;
-  return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=700&q=80`;
+  return productImages[normalizeText(category)] || productImages.acessorios;
 }
 
 function renderFilters() {
