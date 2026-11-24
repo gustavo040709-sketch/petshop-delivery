@@ -57,8 +57,10 @@ Python do sistema.
 
 ## Interface web
 
-O front-end está na raiz do projeto. O botão de finalizar pedido abre uma página
-de checkout separada. O formulário de cartão é fornecido pelo Card Payment
+O front-end está na raiz do projeto. Materialize CSS 1.0.0 é carregado por CDN
+antes dos estilos próprios, que permanecem responsáveis pelo tema da loja. O
+botão de finalizar pedido abre uma página de checkout separada. O formulário
+de cartão é fornecido pelo Card Payment
 Brick do Mercado Pago; os dados sensíveis do cartão não são enviados nem
 armazenados pelo site. Configure primeiro as credenciais de teste do Mercado
 Pago e só use credenciais de produção em um ambiente HTTPS.

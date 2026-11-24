@@ -96,7 +96,7 @@ function renderFilters() {
 
 function createProductCard(product) {
   const card = document.createElement("article");
-  card.className = "product-card";
+  card.className = "product-card z-depth-1";
 
   const imageArea = document.createElement("div");
   imageArea.className = "product-image";
