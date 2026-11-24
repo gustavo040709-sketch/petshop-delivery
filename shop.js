@@ -234,6 +234,20 @@ function renderCart() {
   });
 }
 
+function exportProductsToPdf() {
+  if (!productGrid.querySelector(".product-card")) {
+    showToast("Não há produtos visíveis para exportar.");
+    return;
+  }
+
+  const generatedAt = new Intl.DateTimeFormat("pt-BR", {
+    dateStyle: "long",
+    timeStyle: "short"
+  }).format(new Date());
+  document.querySelector("#catalog-export-date").textContent = `Gerado em ${generatedAt}`;
+  window.print();
+}
+
 async function loadProducts() {
   try {
     const response = await fetch("/api/produtos");
@@ -241,6 +255,7 @@ async function loadProducts() {
     if (!response.ok) throw new Error(data.erro || "Não foi possível carregar os produtos.");
     if (!Array.isArray(data.produtos)) throw new Error("A vitrine recebeu uma resposta inválida.");
     products = data.produtos;
+    document.querySelector("#export-products").disabled = products.length === 0;
     renderFilters();
     renderProducts();
     renderCart();
@@ -253,9 +268,12 @@ async function loadProducts() {
     productGrid.append(message);
     document.querySelector("#product-count").textContent = "Produtos indisponíveis";
     productGrid.setAttribute("aria-busy", "false");
+    document.querySelector("#export-products").disabled = true;
     renderCart();
   }
 }
+
+document.querySelector("#export-products").addEventListener("click", exportProductsToPdf);
 
 document.querySelector("#filter-list").addEventListener("click", (event) => {
   const button = event.target.closest("button[data-category]");
