@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <title>Brinquedo de bola</title>
+  <rect width="700" height="500" fill="#f3ebdd"/>
+  <circle cx="105" cy="105" r="58" fill="#e8d9c1"/>
+  <circle cx="595" cy="396" r="77" fill="#e6d6bc"/>
+  <ellipse cx="350" cy="412" rx="153" ry="18" fill="#d9c9ae"/>
+  <circle cx="350" cy="258" r="143" fill="#e5ad5d"/>
+  <path d="M238 169c66 36 122 130 127 222M462 169c-66 36-122 130-127 222" fill="none" stroke="#cf814a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M213 258h274M350 115c-42 41-65 89-65 143s23 102 65 143M350 115c42 41 65 89 65 143s-23 102-65 143" fill="none" stroke="#f6d48f" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="350" cy="258" r="39" fill="#fff7e8"/>
+  <path d="M334 250c0-7 5-12 11-12s9 5 9 12c0-7 5-12 11-12s12 5 12 12c0 8-8 14-23 25-15-11-20-17-20-25z" fill="#315c4d"/>
+</svg>

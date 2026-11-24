@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <title>Brinquedo de corda</title>
+  <rect width="700" height="500" fill="#edf1e9"/>
+  <circle cx="101" cy="396" r="74" fill="#dce8df"/>
+  <circle cx="598" cy="99" r="56" fill="#dce8df"/>
+  <ellipse cx="350" cy="413" rx="171" ry="17" fill="#d3ddd1"/>
+  <g transform="rotate(-27 350 255)">
+    <path d="M260 255h180" fill="none" stroke="#d99056" stroke-width="42" stroke-linecap="round"/>
+    <path d="M260 255h180" fill="none" stroke="#f1ca83" stroke-width="16" stroke-linecap="round" stroke-dasharray="10 13"/>
+    <path d="M260 255c-37-46-91-43-103-8-11 32 14 61 46 55 27-5 40-28 28-47M440 255c37-46 91-43 103-8 11 32-14 61-46 55-27-5-40-28-28-47" fill="#6d9d89" stroke="#527b68" stroke-width="13" stroke-linecap="round"/>
+    <path d="M183 231c-9 15-9 29 0 43M517 231c9 15 9 29 0 43" fill="none" stroke="#a9c5ad" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <circle cx="350" cy="145" r="13" fill="#e5b866"/>
+  <circle cx="560" cy="365" r="10" fill="#d99056"/>
+</svg>

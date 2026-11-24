@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <title>Cama pequena para pet</title>
+  <rect width="700" height="500" fill="#f3ebdd"/>
+  <circle cx="105" cy="106" r="57" fill="#e8d9c1"/>
+  <circle cx="594" cy="395" r="76" fill="#e6d6bc"/>
+  <ellipse cx="350" cy="407" rx="192" ry="24" fill="#d9c9ae"/>
+  <path d="M163 293c0-73 84-128 187-128s187 55 187 128v55c0 38-31 69-69 69H232c-38 0-69-31-69-69z" fill="#6d9d89"/>
+  <path d="M190 300c0-55 71-95 160-95s160 40 160 95v39c0 25-20 45-45 45H235c-25 0-45-20-45-45z" fill="#9ab69e"/>
+  <ellipse cx="350" cy="311" rx="132" ry="70" fill="#f4dfbb"/>
+  <path d="M307 281c0-18 13-31 29-31 7 0 12 2 16 7 5-5 10-7 17-7 17 0 29 13 29 31 0 19-16 32-46 52-29-20-45-33-45-52z" fill="#d99056"/>
+  <text x="350" y="449" text-anchor="middle" fill="#315c4d" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="3">CAMA PEQUENA</text>
+</svg>

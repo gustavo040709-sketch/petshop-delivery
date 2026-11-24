@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <title>Comedouro para pets</title>
+  <rect width="700" height="500" fill="#edf1e9"/>
+  <circle cx="106" cy="106" r="56" fill="#dce8df"/>
+  <circle cx="596" cy="398" r="76" fill="#dce8df"/>
+  <ellipse cx="350" cy="406" rx="187" ry="22" fill="#d3ddd1"/>
+  <path d="M174 248h352l-37 139c-8 31-34 51-65 51H276c-31 0-57-20-65-51z" fill="#6d9d89"/>
+  <ellipse cx="350" cy="248" rx="176" ry="53" fill="#527b68"/>
+  <ellipse cx="350" cy="246" rx="143" ry="31" fill="#e5b866"/>
+  <ellipse cx="350" cy="243" rx="121" ry="23" fill="#896341"/>
+  <circle cx="295" cy="237" r="10" fill="#c89961"/>
+  <circle cx="327" cy="251" r="11" fill="#d8a66a"/>
+  <circle cx="358" cy="235" r="9" fill="#c89961"/>
+  <circle cx="389" cy="250" r="12" fill="#d8a66a"/>
+  <circle cx="418" cy="235" r="8" fill="#c89961"/>
+  <path d="M249 364h202" stroke="#a9c5ad" stroke-width="9" stroke-linecap="round"/>
+  <path d="M322 306c0-8 6-14 13-14s11 6 11 14c0-8 6-14 13-14s14 6 14 14c0 10-9 17-27 31-17-14-24-21-24-31z" fill="#f7efdf"/>
+</svg>

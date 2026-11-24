@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <title>Pacote de ração para gatos</title>
+  <rect width="700" height="500" fill="#eef0e7"/>
+  <circle cx="112" cy="392" r="74" fill="#dce4d5"/>
+  <circle cx="589" cy="98" r="57" fill="#dce4d5"/>
+  <ellipse cx="350" cy="426" rx="178" ry="19" fill="#d5dacd"/>
+  <path d="m207 169 20-64 70 33h106l70-33 20 64-20 240H227z" fill="#527b68"/>
+  <path d="m227 129 54 28 69-2 69 2 54-28" fill="none" stroke="#719884" stroke-width="16"/>
+  <rect x="244" y="188" width="212" height="172" rx="18" fill="#fffaf0"/>
+  <path d="m310 244 7-33 31 22 31-22 7 33" fill="#d99056"/>
+  <circle cx="350" cy="258" r="41" fill="#e4b75f"/>
+  <path d="M320 260c9 12 20 17 30 17s21-5 30-17M332 248h2m32 0h2" fill="none" stroke="#315c4d" stroke-width="6" stroke-linecap="round"/>
+  <text x="350" y="324" text-anchor="middle" fill="#315c4d" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="2">RACAO FELINA</text>
+  <text x="350" y="348" text-anchor="middle" fill="#718375" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">SABOR E CUIDADO</text>
+</svg>

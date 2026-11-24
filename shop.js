@@ -10,6 +10,23 @@ const productImages = {
   acessorios: "/imagens/acessorios.svg",
   brinquedos: "/imagens/brinquedos.svg"
 };
+const productImagesByName = {
+  "racao para caes 10kg": "/imagens/produtos/racao-caes.svg",
+  "racao para gatos 10kg": "/imagens/produtos/racao-gatos.svg",
+  "petisco sabor carne": "/imagens/produtos/petisco-carne.svg",
+  "petisco sabor frango": "/imagens/produtos/petisco-frango.svg",
+  "shampoo para caes": "/imagens/produtos/shampoo-caes.svg",
+  "shampoo para gatos": "/imagens/produtos/shampoo-gatos.svg",
+  "coleira azul": "/imagens/produtos/coleira-azul.svg",
+  "coleira vermelha": "/imagens/produtos/coleira-vermelha.svg",
+  "brinquedo bola": "/imagens/produtos/brinquedo-bola.svg",
+  "brinquedo corda": "/imagens/produtos/brinquedo-corda.svg",
+  "cama pequena": "/imagens/produtos/cama-pequena.svg",
+  "cama grande": "/imagens/produtos/cama-grande.svg",
+  "areia para gatos": "/imagens/produtos/areia-gatos.svg",
+  "escova para pelos": "/imagens/produtos/escova-pelos.svg",
+  comedouro: "/imagens/produtos/comedouro.svg"
+};
 let products = [];
 let cart = readCart();
 let activeCategory = "todos";
@@ -54,8 +71,11 @@ function normalizeText(value) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR");
 }
 
-function productImageUrl(category) {
-  return productImages[normalizeText(category)] || productImages.acessorios;
+function productImageUrl(product) {
+  const productName = normalizeText(product.nome || "");
+  return productImagesByName[productName]
+    || productImages[normalizeText(product.categoria)]
+    || productImages.acessorios;
 }
 
 function renderFilters() {
@@ -85,7 +105,7 @@ function createProductCard(product) {
   placeholder.setAttribute("aria-hidden", "true");
   placeholder.textContent = "🐾";
   const image = document.createElement("img");
-  image.src = product.imagem || productImageUrl(product.categoria);
+  image.src = product.imagem || productImageUrl(product);
   image.alt = product.nome;
   image.loading = "lazy";
   image.addEventListener("error", () => { image.hidden = true; }, { once: true });

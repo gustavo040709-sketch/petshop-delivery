@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <title>Petisco sabor frango</title>
+  <rect width="700" height="500" fill="#f5efdf"/>
+  <circle cx="103" cy="396" r="70" fill="#eadfc5"/>
+  <circle cx="599" cy="102" r="58" fill="#eadfc5"/>
+  <ellipse cx="350" cy="421" rx="151" ry="17" fill="#ddcfb3"/>
+  <path d="M238 112h224l-12 57 32 33-21 214H239l-21-214 32-33z" fill="#dc9d45"/>
+  <path d="M250 112h200l-13 53H263z" fill="#f0c66f"/>
+  <rect x="260" y="218" width="180" height="151" rx="18" fill="#fff9ed"/>
+  <text x="350" y="251" text-anchor="middle" fill="#9b6735" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="3">PETISCO</text>
+  <path d="M316 284c-15-14-36-5-36 13 0 14 12 22 26 20l39 42c-2 14 7 26 21 26 18 0 26-20 15-33l-42-34c2-13-7-25-20-26z" fill="#e5ad5d"/>
+  <circle cx="281" cy="297" r="16" fill="#e5ad5d"/>
+  <path d="M359 324c12-12 30-10 38 3 8 12 2 29-11 35" fill="none" stroke="#d4874d" stroke-width="11" stroke-linecap="round"/>
+  <text x="350" y="351" text-anchor="middle" fill="#765d3d" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">SABOR FRANGO</text>
+</svg>

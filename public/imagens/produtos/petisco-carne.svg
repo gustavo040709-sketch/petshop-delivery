@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <title>Petisco sabor carne</title>
+  <rect width="700" height="500" fill="#f5ebdf"/>
+  <circle cx="100" cy="105" r="54" fill="#ead7c0"/>
+  <circle cx="602" cy="397" r="76" fill="#ead7c0"/>
+  <ellipse cx="350" cy="421" rx="151" ry="17" fill="#ddcbb1"/>
+  <path d="M238 112h224l-12 57 32 33-21 214H239l-21-214 32-33z" fill="#a9563f"/>
+  <path d="M250 112h200l-13 53H263z" fill="#d17d4d"/>
+  <rect x="260" y="218" width="180" height="151" rx="18" fill="#fff7e9"/>
+  <text x="350" y="251" text-anchor="middle" fill="#9b4d38" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="3">PETISCO</text>
+  <path d="M299 307c-18-2-26-15-20-28 5-11 19-14 30-6l18 13 24-1 18-13c11-8 25-5 30 6 6 13-2 26-20 28l-18 2-17 22c-8 11-22 11-30 0l-17-22z" fill="#d99056"/>
+  <text x="350" y="350" text-anchor="middle" fill="#76533e" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">SABOR CARNE</text>
+</svg>

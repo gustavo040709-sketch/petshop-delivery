@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <title>Areia para gatos</title>
+  <rect width="700" height="500" fill="#f0edf3"/>
+  <circle cx="105" cy="105" r="56" fill="#e0d9e8"/>
+  <circle cx="594" cy="397" r="76" fill="#e0d9e8"/>
+  <ellipse cx="350" cy="420" rx="158" ry="18" fill="#d8d1df"/>
+  <path d="M238 119h224l-13 58 26 34-22 205H247l-22-205 26-34z" fill="#8b799f"/>
+  <path d="M251 119h198l-14 51H265z" fill="#aa98b8"/>
+  <rect x="262" y="218" width="176" height="153" rx="17" fill="#fff9f1"/>
+  <path d="m306 260 7-32 37 25 37-25 7 32" fill="#d99056"/>
+  <circle cx="350" cy="268" r="37" fill="#e5b866"/>
+  <path d="M326 269c8 11 16 16 24 16s16-5 24-16M336 258h2m24 0h2" fill="none" stroke="#574b69" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="293" cy="339" r="7" fill="#d4c9d9"/>
+  <circle cx="318" cy="343" r="7" fill="#d4c9d9"/>
+  <circle cx="343" cy="339" r="7" fill="#d4c9d9"/>
+  <circle cx="368" cy="343" r="7" fill="#d4c9d9"/>
+  <circle cx="393" cy="339" r="7" fill="#d4c9d9"/>
+  <text x="350" y="402" text-anchor="middle" fill="#574b69" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2">AREIA PARA GATOS</text>
+</svg>

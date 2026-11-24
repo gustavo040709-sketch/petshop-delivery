@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <title>Coleira azul</title>
+  <rect width="700" height="500" fill="#edf0eb"/>
+  <circle cx="101" cy="103" r="56" fill="#dce4d8"/>
+  <circle cx="600" cy="396" r="77" fill="#dce4d8"/>
+  <path d="M151 276c65-99 333-99 398 0" fill="none" stroke="#4f86a5" stroke-width="78" stroke-linecap="round"/>
+  <path d="M169 276c61-74 301-74 362 0" fill="none" stroke="#91b8cb" stroke-width="8" stroke-linecap="round" stroke-dasharray="3 16"/>
+  <rect x="300" y="226" width="90" height="94" rx="11" fill="#e5b866"/>
+  <rect x="326" y="243" width="38" height="60" rx="7" fill="#f7efdf"/>
+  <path d="M390 263h34c14 0 25 11 25 25v6c0 14-11 25-25 25h-34" fill="none" stroke="#e5b866" stroke-width="12"/>
+  <path d="M406 319v29" stroke="#e5b866" stroke-width="12" stroke-linecap="round"/>
+  <path d="M405 344c-26 12-36 31-26 51 9 17 29 24 48 16 19-9 24-30 14-47-7-12-20-18-36-20z" fill="#d99056"/>
+  <circle cx="417" cy="375" r="7" fill="#fff6e8"/>
+  <text x="350" y="430" text-anchor="middle" fill="#315c4d" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="3">COLEIRA AZUL</text>
+</svg>
