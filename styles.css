@@ -158,6 +158,10 @@ img {
   transition: color .2s;
 }
 
+.main-nav a {
+  color: var(--ink);
+}
+
 .main-nav a:hover,
 .header-phone:hover {
   color: #9c7224;
