@@ -143,6 +143,12 @@ img {
 .main-nav {
   gap: 34px;
   margin-left: 50px;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  color: var(--ink);
+  background: transparent;
+  box-shadow: none;
 }
 
 .main-nav a,
