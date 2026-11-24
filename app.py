@@ -4,6 +4,7 @@ import hmac
 import os
 import re
 import sys
+import threading
 import uuid
 from datetime import datetime
 from decimal import Decimal
@@ -16,11 +17,18 @@ from flask import Flask, jsonify, request, send_from_directory
 PYTHON_DIR = Path(__file__).resolve().parent / "python"
 sys.path.insert(0, str(PYTHON_DIR))
 
-from banco import conectar, criar_tabelas
+import psycopg
+from banco import (
+    DatabaseConfigurationError,
+    conectar as conectar_banco,
+    criar_tabelas,
+)
 
 BASE_DIR = Path(__file__).resolve().parent
 MERCADO_PAGO_API = "https://api.mercadopago.com/v1/payments"
 app = Flask(__name__, static_folder=str(BASE_DIR), static_url_path="")
+_banco_preparado = False
+_banco_preparando = threading.Lock()
 
 
 class MercadoPagoError(Exception):
@@ -30,7 +38,37 @@ class MercadoPagoError(Exception):
 
 
 def preparar_banco():
-    criar_tabelas()
+    global _banco_preparado
+    if _banco_preparado:
+        return
+    with _banco_preparando:
+        if _banco_preparado:
+            return
+        try:
+            criar_tabelas()
+        except Exception:
+            app.logger.exception("Falha ao preparar o banco de dados.")
+            raise
+        _banco_preparado = True
+
+
+def conectar():
+    preparar_banco()
+    return conectar_banco()
+
+
+@app.errorhandler(psycopg.OperationalError)
+def erro_conexao_banco(error):
+    app.logger.exception("Falha de conexão com o banco de dados.")
+    return jsonify({
+        "erro": "Não foi possível conectar ao banco de dados. Confira DATABASE_URL e o acesso ao Neon."
+    }), 503
+
+
+@app.errorhandler(DatabaseConfigurationError)
+def erro_configuracao_banco(error):
+    app.logger.error("Configuração do banco inválida: %s", error)
+    return jsonify({"erro": str(error)}), 503
 
 
 def validar_carrinho(carrinho):
@@ -522,8 +560,6 @@ def mercado_pago_webhook():
         return jsonify({"erro": "Não foi possível processar a notificação."}), 500
 
 
-preparar_banco()
-
-
 if __name__ == "__main__":
+    preparar_banco()
     app.run(debug=False)

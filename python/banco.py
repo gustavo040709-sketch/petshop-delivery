@@ -8,6 +8,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
 
 
+class DatabaseConfigurationError(RuntimeError):
+    pass
+
+
 class CursorPostgres:
     def __init__(self, cursor):
         self._cursor = cursor
@@ -43,11 +47,13 @@ class ConexaoPostgres:
 def conectar():
     database_url = os.environ.get("DATABASE_URL")
     if not database_url:
-        raise RuntimeError(
+        raise DatabaseConfigurationError(
             "Configure DATABASE_URL com a URL de conexão PostgreSQL do Neon."
         )
     if not database_url.startswith(("postgresql://", "postgres://")):
-        raise RuntimeError("DATABASE_URL precisa ser uma URL PostgreSQL.")
+        raise DatabaseConfigurationError(
+            "DATABASE_URL precisa ser uma URL PostgreSQL."
+        )
 
     return ConexaoPostgres(
         psycopg.connect(database_url, connect_timeout=10)

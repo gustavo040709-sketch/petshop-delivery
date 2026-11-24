@@ -36,15 +36,19 @@ colunas conhecidas para os nomes esperados pela aplicação e preserva os dados.
 
 1. Importe este repositório no Vercel.
 2. Em **Settings > Environment Variables**, adicione `DATABASE_URL` com a mesma
-   connection string do Neon para os ambientes usados (Production, Preview e/ou
+   connection string PostgreSQL do Neon (de preferência a URL com pooler e
+   `sslmode=require`) para os ambientes usados (Production, Preview e/ou
    Development).
 3. Adicione também as variáveis do Mercado Pago se for habilitar pagamentos.
 4. Faça um novo deploy depois de salvar as variáveis.
 
 O arquivo `api/index.py` encaminha as requisições ao Flask e `vercel.json`
-configura o roteamento. O Vercel não usa o arquivo `.env` local; sem
-`DATABASE_URL` configurada no projeto, a aplicação informa o erro em vez de
-usar um banco local temporário.
+configura o roteamento. O Vercel não usa o arquivo `.env` local. A conexão e
+criação/atualização das tabelas acontecem no primeiro acesso à API que consulta
+o banco, não durante o carregamento da função; assim, uma falha no Neon não
+impede a página inicial de abrir. Sem `DATABASE_URL` configurada, a API retorna
+um erro de configuração e não usa um banco local temporário. Consulte **Runtime
+Logs** no Vercel para detalhes de falhas de conexão.
 
 ## Estrutura
 
